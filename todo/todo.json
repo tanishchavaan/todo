@@ -1,0 +1,13 @@
+{
+    "persons"{
+        "name" : "Tanish",
+        "age" : 20,
+        "address" :
+        {
+            "town":"Sangareddy",
+            "state" :"Telangana",
+            "country" : "India"
+
+        },
+        "education":["Karuna high school" ,"Akshya junior collge" , "JNTU UNIVERSITY OF TECHNOLGY"],
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { width: 300px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        input { display: block; width: 100%; margin: 10px 0; padding: 8px; }
+        button { padding: 10px; width: 100%; background: blue; color: white; border: none; cursor: pointer; }
+    </style>
+    <script>
+            
+            window.onload = function () {
+    document.getElementById("regBtn").addEventListener("click", function () {
+        let newUser = document.getElementById("regUsername").value.trim();
+
+        if (newUser === "") {
+            alert("❌ Username cannot be empty!");
+            return;
+        }
+
+        localStorage.setItem("user", newUser); // Store user
+        alert("✅ Registration successful! Redirecting to login...");
+        window.location.href = "login.html"; // Redirect to login
+    });
+};
+
+
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <input type="text" id="regUsername" placeholder="Username">
+        <input type="password" id="regPassword" placeholder="Password">
+        <input type="email" id="regEmail" placeholder="Email (must end with .gmail.com)">
+        <button onclick="register()" id="regBtn">Register</button>
+        <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+
+    <script>
+        function register() {
+            let username = document.getElementById("regUsername").value;
+            let password = document.getElementById("regPassword").value;
+            let email = document.getElementById("regEmail").value;
+            
+            let usernameRegex = /^[A-Za-z][A-Za-z0-9!@#$%^&*]*$/; 
+
+            let passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{6,}$/;  
+
+
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;  
+
+
+            
+            if (!usernameRegex.test(username)) {
+                alert("Invalid username! It must have at least one special character, one number, and no spaces.");
+                return;
+            }
+            if (!passwordRegex.test(password)) {
+                alert("Invalid password! It must be exactly six characters long, contain at least one special character, one number, and no spaces.");
+                return;
+            }
+            if (!emailRegex.test(email)) {
+                alert("Invalid email! It must end with .gmail.com");
+                return;
+            }
+            
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+            if (users.some(user => user.username === username)) {
+                alert("Username already taken! Try another one.");
+                return;
+            }
+            
+            users.push({ username, password });
+            localStorage.setItem("users", JSON.stringify(users));
+            alert("Registration successful! Redirecting to login...");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

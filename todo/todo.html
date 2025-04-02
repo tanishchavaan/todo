@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="todo.css">
+    <script>
+        window.onload = function() {
+    let user = localStorage.getItem("user");
+
+    if (!user) {
+        window.location.href = "register.html"; // New users go to register
+    } else {
+        let loggedIn = localStorage.getItem("loggedIn");
+        if (!loggedIn) {
+            window.location.href = "login.html"; // Registered users go to login first
+        }
+    }
+};
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do App</h1>
+        <p>Complete tasks & earn 5 points for every task.Every 100 points makes you climb the ladder of level.Reach Level 100 to unlock the unexpected surprise!!</p>
+        <input type="text" id="taskInput" placeholder="Enter Task">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="taskList" class="task-list"></ul>
+    </div>
+    <div id="points"><i class="fa-solid fa-coins coin-icon"></i> <span id="pointValue">0</span> | Level: <span id="levelValue">1</span></div>
+    <div id="levelBarContainer">
+        <div id="levelBar"></div>
+    </div>
+    <script src="todo.js"></script>
+    <footer>
+        © Tanish Chavan | Email: chavantanishraj123@gmail.com
+    </footer>
+</body>
+</html>

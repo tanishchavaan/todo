@@ -1,0 +1,90 @@
+body 
+{ 
+    font-family: 'Arial',  sans-serif; 
+    background: black; 
+    text-align: center; 
+     margin: 0;
+   padding: 0; 
+}
+.container
+ { 
+    max-width: 400px;
+     margin: 50px auto; 
+     background: white; 
+     padding: 20px;
+      border-radius: 10px; 
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+h1 { 
+    color: #333;
+ }
+p { 
+    color: grey;
+ }
+input { 
+    width: 70%; 
+    padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+button { 
+    padding: 10px 15px; 
+    background: #28a745; 
+    color: white;
+     border: none;
+      border-radius: 5px; 
+      cursor: pointer; }
+button:hover { 
+    background: #218838; }
+.task-list { 
+    list-style: none; 
+    padding: 0; }
+.task-item {
+     display: flex;
+      flex-direction: column; 
+      align-items: flex-start; 
+      padding: 10px; 
+      border-bottom: 1px solid #ddd; 
+      background: white;
+       margin-top: 5px; 
+       border-radius: 5px; }
+.task-date {
+     font-size: 12px; 
+     color: grey; 
+     margin-bottom: 5px; }
+.task-content { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+     width: 100%; }
+.complete { 
+    text-decoration: line-through; 
+    color: gray; }
+.coin-icon { 
+    color: gold;
+     margin-right: 5px; }
+#levelBarContainer { 
+    position: fixed; 
+    left: 10px; 
+    bottom: 50px; 
+    width: 20px;
+     height: 200px; 
+     border: 2px solid whitesmoke; 
+     background: black;
+      overflow: hidden; }
+#levelBar {
+     width: 100%; 
+     height: 25%;
+      background: green; 
+      transition: height 0.5s ease-out; }
+#points { 
+    position: absolute;
+     top: 10px;
+      right: 10px; 
+      font-size: 20px;
+       display: flex; 
+       align-items: center; 
+    color: #ddd;}
+footer {
+     position: fixed; 
+     bottom: 0;
+      width: 100%; 
+      text-align: center; 
+      background: black;
+}
