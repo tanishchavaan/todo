@@ -28,7 +28,7 @@ If a user hasn't registered, they are redirected to the register page.
 If a registered user isn’t logged in, they are redirected to the login page before accessing their tasks.
 This app gamifies productivity, making task completion fun and engaging! 🎯🔥
 
-Visit the site here : https://todo-green-pi-92.vercel.app/
+
 
 
 
